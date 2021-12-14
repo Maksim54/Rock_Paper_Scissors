@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +14,7 @@ namespace RockPaperScissors
     public partial class Form1 : Form
     {
         int rounds = 3;
-        int timerPerRound = 6;
+        int timerPerRound = 10;
         bool gameOver = false;
 
         string[] CPUchoiceList = { "kivi", "paber", "käärid","paber", "käärid", "kivi" };
@@ -49,18 +50,24 @@ namespace RockPaperScissors
         {
             picPlayer.Image = Properties.Resources.rock;
             playerChoice = "kivi";
+            //SoundPlayer Simple=new SoundPlayer(@"C:\Users\opilane\Source\Repos\Rock_Paper_Scissors\Resources\rocksound.mp3");
+            //Simple.Play();
         }
 
         private void btnPaper_Click(object sender, EventArgs e)
         {
             picPlayer.Image = Properties.Resources.paper;
             playerChoice = "paber";
+            //SoundPlayer Simple=new SoundPlayer(@"C:\Users\opilane\Source\Repos\Rock_Paper_Scissors\Resources\papersound.mp3");
+            //Simple.Play();
         }
 
         private void btnScissor_Click(object sender, EventArgs e)
         {
             picPlayer.Image = Properties.Resources.scissors;
             playerChoice = "käärid";
+            //SoundPlayer Simple = new SoundPlayer(@"C:\Users\opilane\Source\Repos\Rock_Paper_Scissors\Resources\scissorsound.mp3");
+            //Simple.Play();
         }
 
         private void btnRestart_Click(object sender, EventArgs e)
@@ -94,7 +101,7 @@ namespace RockPaperScissors
             {
                 countDownTimer.Enabled = false;
 
-                timerPerRound = 6;
+                timerPerRound = 10;
 
                 randomNumber = rnd.Next(0, CPUchoiceList.Length);
 
@@ -225,6 +232,34 @@ namespace RockPaperScissors
         {
             Rules help = new Rules();
             help.Show();
+
+            if (timerPerRound > 9)
+            {
+                countDownTimer.Enabled = false;
+
+                timerPerRound = 9;
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            string message = "Oled sa selles kindel?";
+            string title = "Sulge aken";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                // Do something  
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

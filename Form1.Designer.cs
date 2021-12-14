@@ -43,6 +43,7 @@ namespace RockPaperScissors
             this.btnRules = new System.Windows.Forms.Button();
             this.picCPU = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picCPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             this.SuspendLayout();
@@ -96,20 +97,20 @@ namespace RockPaperScissors
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(171, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 29);
+            this.label1.Size = new System.Drawing.Size(108, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mängija";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(705, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 29);
+            this.label2.Size = new System.Drawing.Size(55, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "Bot";
             // 
@@ -129,9 +130,9 @@ namespace RockPaperScissors
             this.txtCountDown.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtCountDown.Location = new System.Drawing.Point(454, 137);
             this.txtCountDown.Name = "txtCountDown";
-            this.txtCountDown.Size = new System.Drawing.Size(26, 26);
+            this.txtCountDown.Size = new System.Drawing.Size(40, 26);
             this.txtCountDown.TabIndex = 2;
-            this.txtCountDown.Text = "5";
+            this.txtCountDown.Text = "10";
             this.txtCountDown.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtRounds
@@ -179,13 +180,24 @@ namespace RockPaperScissors
             this.picPlayer.TabIndex = 1;
             this.picPlayer.TabStop = false;
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(12, 379);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(116, 52);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Välja";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RockPaperScissors.Properties.Resources.wall;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(824, 441);
+            this.ClientSize = new System.Drawing.Size(842, 446);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRules);
             this.Controls.Add(this.txtRounds);
             this.Controls.Add(this.txtCountDown);
@@ -203,6 +215,7 @@ namespace RockPaperScissors
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rock Paper Scissors";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picCPU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             this.ResumeLayout(false);
@@ -225,6 +238,7 @@ namespace RockPaperScissors
         private System.Windows.Forms.Label txtRounds;
         private System.Windows.Forms.Timer countDownTimer;
         private System.Windows.Forms.Button btnRules;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

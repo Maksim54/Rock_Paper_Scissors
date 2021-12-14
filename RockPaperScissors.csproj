@@ -104,5 +104,10 @@
   <ItemGroup>
     <None Include="Resources\wall.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\papersound.mp3" />
+    <Content Include="Resources\rocksound.mp3" />
+    <Content Include="Resources\scissorsound.mp3" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
